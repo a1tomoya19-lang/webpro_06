@@ -33,6 +33,17 @@ app.get("/keiyo_add", (req, res) => {
   //res.render('db1', { data: station });
 });
 
+let game = [
+  {id:1, title:"スプラトゥーン", platform:"任天堂swich", genre:"シューティング"},
+  {id:2, title:"COD mw4", platform:"任天堂swich", genre:"fps"},
+  {id:3, title:"ELUDENRING", platform:"任天堂swich", genre:"オープンワールド"},
+  {id:4, title:"モンスターハンターワイルズ", platform:"PS5", genre:"ハンティングアクション"},
+];
+
+app.get("/game", (req, res) =>{
+  res.render('game', { data: game });
+});
+
 app.get("/hello1", (req, res) => {
   const message1 = "Hello world";
   const message2 = "Bon jour";
