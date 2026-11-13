@@ -48,6 +48,13 @@ app.get("/keiyo2", (req, res) => {
   res.render('keiyo2', {data: station2} );
 });
 
+app.get("/keiyo2/:number", (req, res) => {
+  // 本来ならここにDBとのやり取りが入る
+  const number = req.params.number;
+  const detail = station2[ number ];
+  res.render('keiyo2_detail', {data: detail} );
+});
+
 let game = [
   {id:1, title:"スプラトゥーン", platform:"任天堂swich", genre:"シューティング"},
   {id:2, title:"COD mw4", platform:"任天堂swich", genre:"fps"},
